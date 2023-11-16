@@ -1,0 +1,10 @@
+.container {
+	width: 97vw;
+	height: 97vh;
+    display: flex;
+    flex-direction:row ;
+}
+.content {
+	width: 80%;
+	height: 100%;
+}
