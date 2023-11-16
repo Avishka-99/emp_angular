@@ -1,6 +1,6 @@
-<h1>
-	<app-hello-world></app-hello-world>
-	<app-user-item></app-user-item>
-	<app-user-list></app-user-list>
-	<app-user-form></app-user-form>
-</h1>
+<div class="container">
+	<app-sidebar style="width: 20%" [menus]="sidebarMenus"></app-sidebar>
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

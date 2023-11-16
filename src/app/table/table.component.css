@@ -1,0 +1,6 @@
+.table_component{
+    width: 100%;
+}
+.table_component>thead>th{
+    font-family: poppins-light;
+}
