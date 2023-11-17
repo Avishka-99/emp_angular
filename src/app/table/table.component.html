@@ -17,7 +17,7 @@
 		<tr *ngFor="let row of tableData">
 			<td>{{row.id}}</td>
 			<td>{{row.name}}</td>
-			<td>{{(row.price)}}</td>
+			<td>{{(row.price).toFixed(2)}}</td>
 			<td>{{row.qty}}</td>
 		</tr>
 	</tbody>

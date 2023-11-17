@@ -24,7 +24,10 @@ export class ProductsComponent implements OnInit {
       'id': Math.random() * 101 | 0, 'name': name.value, 'price': parseInt(price.value), 'qty': parseInt(qty.value)
     }
     console.log(newObj);
-    this.products.updateArray([newObj])
+    const data = this.products.updateArray([newObj]);
+    console.log(data)
+    this.prod = data;
+    //console.log(this.products.updateArray([newObj]))
 
   }
 
