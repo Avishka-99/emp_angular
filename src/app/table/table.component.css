@@ -1,6 +1,36 @@
-.table_component{
+.table_component {
     width: 100%;
+    table-layout: fixed;
 }
-.table_component>thead>th{
+
+.table_component>thead>th {
     font-family: poppins-light;
+    background-color: #29ADB2;
+    color: white;
+    text-align: center;
+    padding: 9px;
+}
+
+.table_component>tbody>tr {
+    font-family: poppins-light;
+    color: black;
+    text-align: left;
+    padding: 9px;
+}
+
+.table_component>tbody>tr>td:nth-child(3),
+.table_component>tbody>tr>td:nth-child(4),
+.table_component>tbody>tr>td:nth-child(5),
+.table_component>tbody>tr>td:nth-child(6) {
+    font-family: poppins-light;
+    color: black;
+    text-align: right;
+    padding: 9px;
+}
+
+.table_component>tbody>tr>td:first-child {
+    font-family: poppins-medium;
+    color: black;
+    text-align: center;
+    padding: 9px;
 }

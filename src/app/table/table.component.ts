@@ -14,6 +14,6 @@ export class TableComponent implements OnInit {
 	@Input() type:any;
 	constructor() {}
 	ngOnInit() {
-		console.log((Object.keys(this.tableData[0])).length)
+		//console.log((Object.keys(this.tableData[0])).length)
 	}
 }

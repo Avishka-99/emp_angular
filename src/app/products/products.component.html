@@ -1,1 +1,10 @@
-<p>products works!</p>
+<div class="product-form-row">
+    <form class="product-form">
+        <input type="text" placeholder="Name" class="product-input" #name>
+        <input type="number" placeholder="Price" class="product-input" #price>
+        <input type="number" placeholder="Quantity" class="product-input" #qty>
+        <div class="add-products-button" (click)="regProduct(name,price,qty,$event)" >Add</div>
+    </form>
+
+</div>
+<app-table [tableHeadings]="tableHeadings" [type]="staff" [tableData]="prod"></app-table>

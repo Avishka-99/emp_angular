@@ -1,5 +1,5 @@
 <div class="sidebar">
-	<div   *ngFor="let item of menus">
+	<div class="menu-item-container" *ngFor="let item of menus">
 		<div class="menu-item" (click)="navigateTo(item)">{{ item }}</div>
 	</div>
 </div>
