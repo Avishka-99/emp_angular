@@ -12,7 +12,7 @@ import { TableComponent } from "../table/table.component";
 export class ProductsComponent implements OnInit {
   public prod: any = [];
   public staff: any = "products"
-  tableHeadings = ['Product ID', 'Name', 'Price (Rs.)', 'QTY']
+  tableHeadings = ['Product ID', 'Name', 'Price (Rs.)', 'QTY','']
   ngOnInit(): void {
     this.prod = this.products.getProducts();
     console.log(this.prod)
