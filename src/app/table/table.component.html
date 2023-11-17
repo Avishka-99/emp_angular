@@ -1,5 +1,14 @@
 <table class="table_component">
+	
 	<thead>
 		<th *ngFor="let header of tableHeadings">{{ header }}</th>
 	</thead>
+	<tbody *ngIf='type==="staff"'>
+		<tr *ngFor="let row of tableData">
+			<td>{{row.id}}</td>
+			<td>{{row.name}}</td>
+			<td>{{row.country}}</td>
+			<td>{{row.age}}</td>
+		</tr>
+	</tbody>
 </table>

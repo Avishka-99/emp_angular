@@ -10,6 +10,10 @@ import {CommonModule} from '@angular/common';
 })
 export class TableComponent implements OnInit {
 	@Input() tableHeadings: any;
+	@Input() tableData:any;
+	@Input() type:any;
 	constructor() {}
-	ngOnInit() {}
+	ngOnInit() {
+		console.log((Object.keys(this.tableData[0])).length)
+	}
 }

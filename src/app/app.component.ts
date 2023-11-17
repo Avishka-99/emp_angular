@@ -6,17 +6,18 @@ import {UserItemComponent} from './user-item/user-item.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {UserFormComponent} from './user-form/user-form.component';
 import {SidebarComponent} from './sidebar/sidebar.component';
-
+import { StaffServiceService } from './staff/staff-service.service';
 @Component({
 	selector: 'app-root',
 	standalone: true,
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css'],
 	imports: [CommonModule, RouterOutlet, SidebarComponent],
+	providers:[StaffServiceService]
 })
 export class AppComponent implements OnInit {
 	ngOnInit() {}
 	constructor() {}
 	title = 'emp_angular';
-	sidebarMenus = ['Home', 'Staff'];
+	sidebarMenus = ['Home', 'Staff','Products'];
 }
