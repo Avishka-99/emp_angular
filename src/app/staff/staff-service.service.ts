@@ -1,18 +1,38 @@
 import { Injectable } from '@angular/core';
-
+import axios from 'axios';
 @Injectable({
   providedIn: 'root'
 })
 export class StaffServiceService {
+  private myArray: any[] = [];
+  constructor() {
+    this.getStaff
+  }
+  async getStaff() {
+    try {
+      let data = await axios.get("https://localhost:7185/api/staff");
+      return data.data;
+      //console.log(data)
+      //return data.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  async addStaff(name: string, dept: string, age: number, cno: string, email: string) {
+    //console.log(qty)
+    try {
+      await axios.post("https://localhost:7185/api/staff", {
+        "name": name,
+        "department": dept,
+        "age": age,
+        "contact_no": cno,
+        "contact_email": email
+      })
+    } catch (error) {
 
-  constructor() { }
-  getStaff() {
-    return [
-      { 'id': 1, 'name': 'Davido', 'dep': 'Admin', 'age': 34, 'cno': '0713473321', 'email': 'david@aol.com' },
-      { 'id': 2, 'name': 'Burna Boy', 'dep': 'HR', 'age': 22, 'cno': '0763343322', 'email': 'burna@gmail.com' },
-      { 'id': 3, 'name': 'Diamondz Platinum', 'dep': 'IT', 'age': 27, 'cno': '0783422341', 'email': 'platz@hotmail.com' },
-      { 'id': 4, 'name': 'Sarkodie', 'dep': 'Finance', 'age': 31, 'cno': '0773628592', 'email': 'sarkodi@aol.com' },
-      { 'id': 5, 'name': 'Mr. Eazi', 'dep': 'HR', 'age': 29, 'cno': '0774383104', 'email': 'eazi@yahoo.com' }
-    ];
+    }
+  }
+  async deleteStaff(id: string) {
+    console.log(id)
   }
 }
