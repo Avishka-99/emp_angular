@@ -1,57 +1,84 @@
-.table_component {
+.table-container {
+    height: 80%;
     width: 100%;
-    table-layout: fixed;
 }
 
-.table_component>thead>th {
-    font-family: poppins-light;
-    background-color: #29ADB2;
-    color: white;
-    text-align: center;
-    padding: 9px;
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
 }
 
-.table_component>tbody>tr {
-    font-family: poppins-light;
-    color: black;
+table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+
+thead th {
+    background-color: #009879;
     text-align: left;
-    padding: 9px;
-}
-
-.table_component>tbody>tr>td:nth-child(3),
-.table_component>tbody>tr>td:nth-child(4),
-.table_component>tbody>tr>td:nth-child(5),
-.table_component>tbody>tr>td:nth-child(6) {
     font-family: poppins-light;
-    color: black;
-    text-align: right;
+    color: white;
     padding: 9px;
 }
 
-.table_component>tbody>tr>td:first-child {
-    font-family: poppins-medium;
-    color: black;
-    text-align: center;
-    padding: 9px;
+table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
 }
-.prod-delete-btn{
+
+table tbody tr {
+    width: 100%;
+}
+
+table thead,
+table tbody tr {
+    display: table;
+    table-layout: fixed;
+    height: 40px;
+}
+
+.prod-delete-btn {
     height: 90%;
     width: 90%;
     background-color: #D80032;
     outline: 3px solid #FF6969;
     border-radius: 0.5em;
     display: flex;
-    align-items:center ;
+    align-items: center;
     justify-content: center;
     color: white;
     font-family: poppins-medium;
 }
-.prod-delete-btn:hover{
+
+.prod-delete-btn:hover {
     outline: 3px solid #141E46;
     cursor: pointer;
 }
-.table_component>tbody>tr>td:nth-child(7){
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+tbody>tr>td:first-child {
+    font-family: poppins-medium;
+    color: black;
+    text-align: center;
+    padding: 9px;
+}
+
+tbody>tr>td:nth-child(3),
+tbody>tr>td:nth-child(4),
+tbody>tr>td:nth-child(5),
+tbody>tr>td:nth-child(6) {
+    font-family: poppins-light;
+    color: black;
+    text-align: right;
+    padding: 9px;
+}
+
+tbody>tr {
+    font-family: poppins-light;
+    color: black;
+    text-align: left;
+    padding: 9px;
+
 }

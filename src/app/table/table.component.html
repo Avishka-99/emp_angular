@@ -1,27 +1,30 @@
-<table class="table_component">
+<div class="table-container">
+	<table>
 
-	<thead>
-		<th *ngFor="let header of tableHeadings">{{ header }}</th>
-	</thead>
-	<tbody *ngIf='type==="staff"'>
-		<tr *ngFor="let row of tableData">
-			<td>{{row.id}}</td>
-			<td>{{row.name}}</td>
-			<td>{{row.dep}}</td>
-			<td>{{row.age}}</td>
-			<td>{{row.cno}}</td>
-			<td>{{row.email}}</td>
-		</tr>
-	</tbody>
-	<tbody *ngIf='type==="products"'>
-		<tr *ngFor="let row of tableData">
-			<td>{{row.id}}</td>
-			<td>{{row.name}}</td>
-			<td>{{(row.price).toFixed(2)}}</td>
-			<td>{{row.qty}}</td>
-			<td>
-				<div class="prod-delete-btn">Delete</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
+		<thead>
+			<th *ngFor="let header of tableHeadings">{{ header }}</th>
+		</thead>
+		<tbody *ngIf='type==="staff"'>
+			<tr *ngFor="let row of tableData">
+				<td>{{row.name}}</td>
+				<td>{{row.department}}</td>
+				<td>{{row.age}}</td>
+				<td>{{row.contact_no}}</td>
+				<td style="word-wrap: break-word;">{{row.contact_email}}</td>
+				<td style="display: flex;align-items: center;justify-content: center;">
+					<div class="prod-delete-btn" (click)="del(row.id)">Delete</div>
+				</td>
+			</tr>
+		</tbody>
+		<tbody *ngIf='type==="products"'>
+			<tr *ngFor="let row of tableData">
+				<td>{{row.name}}</td>
+				<td>{{(row.price).toFixed(2)}}</td>
+				<td>{{row.quantity}}</td>
+				<td style="display: flex;align-items: center;justify-content: center;">
+					<div class="prod-delete-btn" (click)="del(row.id)">Delete</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

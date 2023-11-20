@@ -7,6 +7,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StaffServiceService } from './staff/staff-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @Component({
 	selector: 'app-root',
 	standalone: true,

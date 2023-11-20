@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -6,21 +8,71 @@ import { Injectable } from '@angular/core';
 export class ProductServiceService {
   private myArray: any[] = [];
   constructor() {
-    this.myArray = [
-      { 'id': 1, 'name': 'Tikiri Marie', 'price': 310, 'qty': 34 },
-      { 'id': 2, 'name': 'Lanka Soy 90g', 'price': 138, 'qty': 44 },
-      { 'id': 3, 'name': 'Dhal 500g', 'price': 280, 'qty': 67 },
-      { 'id': 4, 'name': 'Elephant house vanilla 1 litre', 'price': 520, 'qty': 23 },
-      { 'id': 5, 'name': 'Lux soap', 'price': 110, 'qty': 78 }
-    ]
+    this.getProducts()
   }
-  getProducts() {
-    return this.myArray;
+  async getProducts() {
+    try {
+      let data = await axios.get("https://localhost:7185/api/products");
+      //console.log(data.data)
+      return data.data
+    } catch (error) {
+      console.log(error)
+    }
   }
-  updateArray(newData: any): any {
-    //console.log(newData)
-    this.myArray.push(newData[0])
-    return (this.myArray)
+  async addProducts(name: string, price: number, qty: number) {
+    console.log(qty)
+    try {
+      await axios.post("https://localhost:7185/api/products", {
+        "name": name,
+        "price": price,
+        "quantity": qty,
+      })
+    } catch (error) {
 
+    }
   }
+  async deleteProduct(id: string) {
+    console.log(id)
+    // try {
+    //   await axios.post("https://localhost:7185/api/products", {
+    //     params: {
+    //       id: id,
+    //     }
+    //   }).then((response) => {
+    //     console.log(response.data)
+    //   })
+
+    // } catch (error) {
+
+    // }
+  }
+
+  // async getProducts() {
+  //   try {
+  //     return await lastValueFrom(
+  //       this.http.get("https://localhost:7185/api/products")
+  //     )
+  //   } catch (error) {
+  //     console.log(error)
+  //     return null;
+  //   }
+  //   // axios.get("https://localhost:7185/api/products").then((response) => {
+  //   //   this.myArray = response.data;
+  //   //   console.log(response.data)
+  //   //   return this.myArray
+  //   //   //console.log(response.data)
+  //   // })
+  // }
+  // setProducts(newData: any): any {
+  //   axios.post("https://localhost:7185/api/products", {
+  //     newData
+
+  //   }).then((response) => {
+  //     this.getProducts()
+  //   })
+  //   //console.log(newData)
+  //   //this.myArray.push(newData[0])
+  //   //return (this.myArray)
+
+  // }
 }
