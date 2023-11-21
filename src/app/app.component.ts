@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { UserItemComponent } from './user-item/user-item.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserFormComponent } from './user-form/user-form.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { StaffServiceService } from './staff/staff-service.service';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { StaffServiceService } from './screens/Admin/staff/staff-service.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({

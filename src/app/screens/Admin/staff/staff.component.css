@@ -16,13 +16,14 @@
 }
 
 .product-input {
-    outline: 3px solid black;
+    outline: 2px solid black;
     height: 33%;
     border: none;
-    border-radius: 3px;
+    border-radius: 4em;
     font-size: 18px;
     padding: 9px;
-    width: 12%;
+    background-color: #D0D4CA;
+    width: 14%;
 }
 
 .product-input:focus {
@@ -62,4 +63,5 @@
 
 ::-webkit-input-placeholder {
     font-family: poppins-light;
+    color: black;
 }
