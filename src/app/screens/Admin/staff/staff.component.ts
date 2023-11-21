@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StaffServiceService } from './staff-service.service';
-import { TableComponent } from "../table/table.component";
+import { TableComponent } from "../../../components/table/table.component";
 import axios from 'axios';
 @Component({
   selector: 'app-staff',
