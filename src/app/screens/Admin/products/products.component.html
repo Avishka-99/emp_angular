@@ -7,5 +7,8 @@
     </form>
 
 </div>
+<div class="product-form-row" style="display: flex;align-items: center;justify-content: center;">
+    <input type="text" placeholder="Search...." class="product-input" style="width: 89%;"  #search>
+</div>
 <app-table [customFunction]="delProduct" [tableHeadings]="tableHeadings" [type]="staff" [tableData]="prod"
-    style="width: 100%;"></app-table>
+    style="width: 100%;height: 70%;"></app-table>

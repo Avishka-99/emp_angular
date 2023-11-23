@@ -52,6 +52,7 @@ export class ProductsComponent {
         console.log(error)
       }
     })
+
     //this.products.deleteProduct(id)
     //console.log(id)
     //this.products.deleteProduct(id)
@@ -64,6 +65,9 @@ export class ProductsComponent {
     //     console.log(error)
     //   }
     // })
+  }
+  search(): void {
+    console.log("hello")
   }
 
 }
