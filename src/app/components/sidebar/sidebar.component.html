@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" *ngIf="isLoggedIn$ | async as isLoggedIn">
 	<div class="menu-item-container" *ngFor="let item of menus">
 		<div class="menu-item" (click)="navigateTo(item)">{{ item }}</div>
 	</div>

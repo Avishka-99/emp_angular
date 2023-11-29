@@ -11,15 +11,18 @@ import axios from 'axios';
   imports: [CommonModule, TableComponent]
 })
 export class ProductsComponent {
+  [x: string]: any;
   public prod: any = [];
   public staff: any = "products"
   tableHeadings = ['Name', 'Price (Rs.)', 'QTY', '']
   constructor(private products: ProductServiceService) {
     this.products.getProducts().then((result) => {
-      console.log(result)
-      //console.log(typeof (result[0].id))
       this.prod = result;
+      console.log(this.prod)
     });
+  }
+  async delProduct(id: string): Promise<void> {
+    console.log(this.prod)
   }
   async loadData() {
     try {
@@ -42,32 +45,38 @@ export class ProductsComponent {
       });
     })
   }
-  async delProduct(id: string): Promise<void> {
-    await axios.delete(`https://localhost:7185/api/products/${id}`).then(async () => {
-      try {
-        let data = await axios.get("https://localhost:7185/api/products");
-        console.log(data.data)
-        this.prod = data.data
-      } catch (error) {
-        console.log(error)
-      }
-    })
 
-    //this.products.deleteProduct(id)
-    //console.log(id)
-    //this.products.deleteProduct(id)
-    // await axios.delete(`https://localhost:7185/api/products/${id}`).then(async () => {
-    //   try {
-    //     let data = await axios.get("https://localhost:7185/api/products");
-    //     console.log(data.data)
-    //     this.prod = data.data
-    //   } catch (error) {
-    //     console.log(error)
-    //   }
-    // })
+  async searchProd(keyword: string): Promise<void> {
+    //console.log(this.prod);
+    // await this.products.SearchProd(keyword).then((response) => {
+    //   this.prod = response
+    // });
   }
-  search(): void {
-    console.log("hello")
-  }
+  //await this.products.deleteProduct(id)
+
+
+  /*await axios.delete(`https://localhost:7185/api/products/${id}`).then(async (response) => {
+    try {
+      const newArr = this.prod.filter((row: any) => row.id != response.data)
+      console.log(newArr)
+      console.log(response.data)
+      //this.prod = data.data
+    } catch (error) {
+      console.log(error)
+    }
+  })*/
+
+  //this.products.deleteProduct(id)
+  //console.log(id)
+  //this.products.deleteProduct(id)
+  // await axios.delete(`https://localhost:7185/api/products/${id}`).then(async () => {
+  //   try {
+  //     let data = await axios.get("https://localhost:7185/api/products");
+  //     console.log(data.data)
+  //     this.prod = data.data
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // })
 
 }

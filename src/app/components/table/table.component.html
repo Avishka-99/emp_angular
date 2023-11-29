@@ -4,7 +4,7 @@
 		<thead>
 			<th *ngFor="let header of tableHeadings">{{ header }}</th>
 		</thead>
-		<tbody *ngIf='type==="staff"'>
+		<tbody *ngIf='type==="staff" && tableData.length>0'>
 			<tr *ngFor="let row of tableData">
 				<td>{{row.name}}</td>
 				<td>{{row.department}}</td>

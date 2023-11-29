@@ -42,7 +42,7 @@ table tbody tr {
 
 .prod-delete-btn {
     height: 90%;
-    width: 90%;
+    width: 40%;
     background-color: #D80032;
     outline: 3px solid #FF6969;
     border-radius: 0.5em;

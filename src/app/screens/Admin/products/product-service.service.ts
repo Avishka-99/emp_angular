@@ -46,6 +46,15 @@ export class ProductServiceService {
 
     // }
   }
+  async SearchProd(keyword: string) {
+    try {
+
+      let data = await axios.get(`https://localhost:7185/api/products/search/${keyword}`)
+      return data.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   // async getProducts() {
   //   try {
