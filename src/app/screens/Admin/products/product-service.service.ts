@@ -31,6 +31,15 @@ export class ProductServiceService {
 
     }
   }
+  async updateProducts(id: number, price: number, qty: number) {
+    console.log(id)
+    axios.post('https://localhost:7185/api/products/update', {
+      "id": id,
+      "price": price,
+      "quantity": qty
+    })
+    return
+  }
   async deleteProduct(id: string) {
     console.log(id)
     // try {

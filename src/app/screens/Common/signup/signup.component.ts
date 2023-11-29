@@ -90,7 +90,11 @@ export class SignupComponent {
         password: upswd
       }).then((response) => {
         if (response.status == 200) {
-          this.router.navigate([''])
+          alert('User registered successfully. Click to redirect')
+          setTimeout(() => {
+            this.router.navigate(['']);
+          }, 2000);
+
         }
       })
     }

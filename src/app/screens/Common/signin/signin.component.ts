@@ -16,14 +16,24 @@ export class SigninComponent {
     private authService: AuthService
   ) { }
   login(name: HTMLInputElement, password: HTMLInputElement) {
-    axios.post('https://localhost:7185/api/users', {
-      name: name.value,
-      password: password.value
-    }).then((response) => {
-      //console.log(response.data[0].user_id)
-      localStorage.setItem('token', response.data[0].user_id);
-      this.authService.login({ 'userName': name.value, 'password': response.data[0].user_id })
-    })
+    if(name.value == '' || password.value==''){
+      alert('Please fill required fields')
+    }else{
+      axios.post('https://localhost:7185/api/users', {
+        name: name.value,
+        password: password.value
+      }).then((response) => {
+        try {
+          localStorage.setItem('token', response.data[0].user_id);
+          this.authService.login({ 'userName': name.value, 'password': response.data[0].user_id })
+        } catch (error) {
+          alert('Please check email and password')
+        }
+        //console.log(response.data[0].user_id)
+       
+      })
+    }
+    
     //localStorage.setItem('token', Math.random().toString());
     //this.authService.login({'userName':name.value,'password':password.value})
   }

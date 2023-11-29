@@ -18,7 +18,7 @@ div {
 }
 
 .menu-item {
-	font-family: poppins-light;
+	font-family: poppins-semibold;
 	width: 90%;
 	height: 5%;
 	display: flex;
@@ -34,4 +34,5 @@ div {
 	background-color: white;
 	color: blueviolet;
 	transition: 0.2s ease-in;
+	font-family: poppins-semibold;
 }

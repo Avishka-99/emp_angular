@@ -9,7 +9,7 @@
 
 .signInForm {
     width: 35em;
-    height: 35em;
+    height: 40em;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 3em;
@@ -21,7 +21,7 @@
 
 .signInROw {
     width: 80%;
-    height: 18%;
+    height: 15%;
     display: flex;
     flex-direction: column;
 
