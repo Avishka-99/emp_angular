@@ -1,0 +1,22 @@
+<div class="signInContainer">
+    <div class="signInForm">
+        <div class="signInROw">
+            <input type="text" class="signinInput" required #userName>
+            <label class="sign-in-placeholder" style="width: 9%">Name</label>
+        </div>
+        <div class="signInROw">
+            <input type="text" class="signinInput" required #userEmail>
+            <label class="sign-in-placeholder" style="width: 9%">Email</label>
+        </div>
+        <div class="signInROw">
+            <input type="password" class="signinInput" required #userPassword>
+            <label class="sign-in-placeholder" style="width: 16%">Password</label>
+        </div>
+        <div class="signInROw">
+            <input type="password" class="signinInput" required #userConfirmPassword>
+            <label class="sign-in-placeholder" >Confirm password</label>
+        </div>
+        <div class="signInButton" (click)="toSignUp(userName,userEmail,userPassword,userConfirmPassword)">Sign Up</div>
+        <div class="notamember">Already a member? <span (click)="toSignIn()">Sign in</span></div>
+    </div>
+</div>

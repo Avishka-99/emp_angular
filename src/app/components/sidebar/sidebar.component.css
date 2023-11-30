@@ -5,12 +5,22 @@ div {
 }
 
 .sidebar {
-	width: 18%;
+	height: 100%;
+	width: 13%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 20px;
+	/* width: 100%;
 	height: 100%;
 	background-color: blueviolet;
 	display: flex;
 	flex-direction: column;
-	position: fixed;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0; */
 }
 
 .menu-item-container {
@@ -18,7 +28,7 @@ div {
 }
 
 .menu-item {
-	font-family: poppins-light;
+	font-family: poppins-semibold;
 	width: 90%;
 	height: 5%;
 	display: flex;
@@ -34,4 +44,5 @@ div {
 	background-color: white;
 	color: blueviolet;
 	transition: 0.2s ease-in;
+	font-family: poppins-semibold;
 }

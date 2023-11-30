@@ -20,4 +20,5 @@ export class TableComponent {
 	del(id: string): void {
 		this.customFunction(id)
 	}
+
 }

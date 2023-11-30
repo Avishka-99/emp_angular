@@ -1,12 +1,15 @@
 .container {
-	width: 97vw;
+	width: 99vw;
 	height: 97vh;
 	display: flex;
 	flex-direction: row;
 }
-
+.sidebar-container{
+	width: 13%;
+	height: 100%;
+}
 .content {
-	width: 80%;
+	width: 87%;
 	height: 100%;
 }
 

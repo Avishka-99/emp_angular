@@ -5,10 +5,24 @@
         <input type="number" placeholder="Quantity" class="product-input" #qty>
         <div class="add-products-button" (click)="regProduct(name,price,qty,$event)">Add</div>
     </form>
+</div>
+<div class="product-form-row">
+    <form class="product-form">
+        <select name="Food" class="select-food" #upname>
+            <option *ngFor="let item of prod" [value]="item.id">
+                {{item.name}}
+            </option>
+        </select>
+        <input type="number" placeholder="Price" class="product-input" #upprice>
+        <input type="number" placeholder="Quantity" class="product-input" #upqty>
+        <div class="add-products-button" (click)="updateProduct(upname,upprice,upqty,$event)">Update</div>
+    </form>
 
 </div>
 <div class="product-form-row" style="display: flex;align-items: center;justify-content: center;">
-    <input type="text" placeholder="Search...." class="product-input" style="width: 89%;"  #search>
+    <input type="text" placeholder="Search...." class="product-input" style="width: 89%;"
+        (change)="searchProd(search.value)" #search>
 </div>
+<div (click)="loadData()" class="refreshButton">Refresh</div>
 <app-table [customFunction]="delProduct" [tableHeadings]="tableHeadings" [type]="staff" [tableData]="prod"
     style="width: 100%;height: 70%;"></app-table>

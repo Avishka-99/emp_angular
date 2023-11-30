@@ -1,0 +1,14 @@
+<div class="signInContainer">
+    <div class="signInForm">
+        <div class="signInROw">
+            <input type="text" class="signinInput" required #userEmail>
+            <label class="sign-in-placeholder" style="width: 9%">Email</label>
+        </div>
+        <div class="signInROw">
+            <input type="password" class="signinInput" required #userPassword>
+            <label class="sign-in-placeholder" style="width: 9%">Password</label>
+        </div>
+        <div class="signInButton" (click)="login(userEmail,userPassword)">Sign In</div>
+        <div class="notamember">Not a member <span (click)="toSignUp()">Sign up</span></div>
+    </div>
+</div>
