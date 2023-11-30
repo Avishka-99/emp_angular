@@ -8,6 +8,7 @@ export class AuthService {
     private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     get isLoggedIn() {
+        this.loggedIn.next(true);
         return this.loggedIn.asObservable();
     }
 
