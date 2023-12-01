@@ -2,13 +2,129 @@
 <div style="height: 2%;"></div>
 <div class="stepper">
     <div class="step-container">
-        <div class="circle">1</div>
-        <div class="line"></div>
-        <div class="circle">2</div>
-        <div class="line"></div>
-        <div class="circle">3</div>
+        <ng-container class="circle" *ngIf="step>0;then blue_1;else gray_1"></ng-container>
+        <ng-template #blue_1>
+            <div class="circle-container">
+                <div class="circle-row">
+                    <div class="empty"></div>
+                    <div class="circle" style="background-color: #274c5b;">1</div>
+
+                    <div class="empty"></div>
+                </div>
+                <div class="stepper-phase" style="color: #274c5b;">
+                    Resignation Request
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #gray_1>
+            <div class="circle-container">
+                <div class="circle-row">
+                    <div class="empty"></div>
+                    <div class="circle">1</div>
+
+                    <div class="empty"></div>
+                </div>
+                <div class="stepper-phase">
+                    Resignation Request
+                </div>
+            </div>
+        </ng-template>
+        <ng-container class="line" *ngIf="step>1;then blue_line_1;else gray_line_1">
+        </ng-container>
+        <ng-template #blue_line_1>
+            <div class="line-row">
+                <div class="stepper-line" style="background-color: #274c5b;"></div>
+            </div>
+            <div class="stepper-phase" style="color: transparent;">test</div>
+        </ng-template>
+        <ng-template #gray_line_1>
+            <div class="line-row">
+                <div class="stepper-line"></div>
+            </div>
+            <div class="stepper-phase" style="color: green;">test</div>
+        </ng-template>
+        <!-- <div class="line">
+            <div class="line-row">
+                <div class="stepper-line" *ngIf="step>2" [ngStyle]="{'background-color': '#274c5b'}"></div>
+            </div>
+            <div class="stepper-phase" style="color: transparent;">test</div>
+        </div> -->
+        <ng-container class="circle" *ngIf="step>1;then blue_2;else gray_2"></ng-container>
+        <ng-template #blue_2>
+            <div class="circle-container">
+                <div class="circle-row">
+                    <div class="empty"></div>
+                    <div class="circle" style="background-color: #274c5b;">2</div>
+
+                    <div class="empty"></div>
+                </div>
+                <div class="stepper-phase" style="color: #274c5b;">
+                    Resignation Request
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #gray_2>
+            <div class="circle-container">
+                <div class="circle-row">
+                    <div class="empty"></div>
+                    <div class="circle">2</div>
+
+                    <div class="empty"></div>
+                </div>
+                <div class="stepper-phase">
+                    Resignation Request
+                </div>
+            </div>
+        </ng-template>
+        <ng-container class="line" *ngIf="step>2;then blue_line_2;else gray_line_2">
+        </ng-container>
+        <ng-template #blue_line_2>
+            <div class="line-row">
+                <div class="stepper-line" style="background-color: #274c5b;"></div>
+            </div>
+            <div class="stepper-phase" style="color: transparent;">test</div>
+        </ng-template>
+        <ng-template #gray_line_2>
+            <div class="line-row">
+                <div class="stepper-line"></div>
+            </div>
+            <div class="stepper-phase" style="color: transparent;">test</div>
+        </ng-template>
+        <!-- <div class="line">
+            <div class="line-row">
+                <div class="stepper-line" *ngIf="step>2" [ngStyle]="{'background-color': '#274c5b'}"></div>
+            </div>
+            <div class="stepper-phase" style="color: transparent;">test</div>
+        </div> -->
+        <ng-container class="circle" *ngIf="step>2;then blue_3;else gray_3"></ng-container>
+        <ng-template #blue_3>
+            <div class="circle-container">
+                <div class="circle-row">
+                    <div class="empty"></div>
+                    <div class="circle" style="background-color: #274c5b;">2</div>
+
+                    <div class="empty"></div>
+                </div>
+                <div class="stepper-phase" style="color: #274c5b;">
+                    Resignation Request
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #gray_3>
+            <div class="circle-container">
+                <div class="circle-row">
+                    <div class="empty"></div>
+                    <div class="circle">2</div>
+
+                    <div class="empty"></div>
+                </div>
+                <div class="stepper-phase">
+                    Resignation Request
+                </div>
+            </div>
+        </ng-template>
     </div>
-    
+
 </div>
 <div style="height: 2%;"></div>
 <div class="form-content">
@@ -33,7 +149,7 @@
                 <div class="input-row">
                     <label>Reason for leaving</label>
                     <select name="reason" class="select-reason">
-                        <option value="I got and offer">I got and offer</option>
+                        <option value="I got and offer">I got an offer</option>
                         <option value="Too much work">Too much work</option>
                     </select>
                 </div>
@@ -48,14 +164,23 @@
                     <input type="text" class="form-input">
                 </div>
             </div>
-            
+
         </div>
-        <div class="form-row" >
+        <div class="form-row">
             <div class="declaration">
-                I am writing to formally resign from my position at [Company Name], effective [last working day, typically two weeks from the current date]. I have thoroughly enjoyed my time working with the company and appreciate the opportunities for professional growth and development.
+                I am writing to formally resign from my position at [Company Name], effective [last working day,
+                typically two weeks from the current date]. I have thoroughly enjoyed my time working with the company
+                and appreciate the opportunities for professional growth and development.
             </div>
         </div>
     </div>
 
     <div class="right"></div>
+</div>
+<div class="button-row">
+    <div class="button-container">
+        <div class="discard" (click)="setStep(1)">Discard</div>
+        <div class="submit" (click)="setStep(-1)">Submit Request for Approval</div>
+        <div class="next">Next</div>
+    </div>
 </div>
